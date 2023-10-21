@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  height: 54px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #644f4f;
+  height: 54px;
+}
+
+select {
+  cursor: pointer;
+}
+
+select, input {
+  width: 100%;
+  padding: 15px 28px;
+}
+
+img {
+width: 100%;
+}
+
+
+.container {
+    inline-size: 996px;
+    block-size: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 64px;
+}
+
+/* 1-ая секция */
+.search {
+    padding-left: 70px;
+    padding-right: 51px;
+    max-inline-size: 545px;
+}
+
+.form_select {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: #212529;
+  background-image: url(../images/select.svg);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  appearance: none;
+}
+
+.form_input-select:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.search__title {
+  font-family: 'Gogh_heavy', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.search__description {
+  margin-top: 45px;
+  line-height: 24.84px;
+  font-size: 18px;
+  font-family: 'Gogh_Regular', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.search-form__city {
+  margin-top: 72px;
+}
+
+.search-form__adress {
+  position: relative;
+}
+
+.find_picceria {
+  position: absolute;
+  bottom: 3px;
+  color: darkblue;
+  font-weight: 900;
+  font-family: 'Gogh_Regular', sans-serif;
+  font-size: 12px;
+}
+
+.search_btn {
+  background-color: #f7e30f;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Gogh_Regular';
+  font-weight: 700;
+}
+
+/* 2-ая секция*/
+.аdditional_info {
+  display: grid;
+  gap: 15px;
+}
+
+.phone_information {
+  font-size: 14px;
+  font-family: 'Gogh_Regular', sans-serif;
+  padding: 1px 0;
+  margin-bottom: 0rem;
+}
+
+.personal_data__information {
+  font-size: 10px;
+  font-family: 'Gogh_Regular', sans-serif;
+  font-weight: 400;
+  padding: 0;
+  width: 65%;
+}
+
+/* Адаптивная верстка под моб телефоны */ 
+@media screen and (max-width: 480px){
+  input {
+    margin-bottom: 0px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    inline-size: 95%;
+    position: relative;
+  }
+  .search {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-inline-size: 545px;
+  }
+  .аdditional_info {
+    display: grid;
+    gap: 15px;
+  }
+  .search__title {
+    font-size: 19px;
+  }
+  .search__description {
+    margin-top: 25px;
+    line-height: 24.84px;
+    font-size: 16px;
+  }
+  .phone_information {
+    margin-top: 64px;
+  }
+  .search_btn {
+    position: absolute;
+    bottom: 100px; /* Переносим кнопку в конец контейнера */
+    left: 12px;
+    width: 95%;
+  }
+}

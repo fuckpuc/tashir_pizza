@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Gogh_heavy;
+    src: url('../fonts/Gogh-Heavy.ttf');
+  }
+
+  @font-face {
+    font-family: Gogh_Bold;
+    src: url('../fonts/Gogh-Bold.ttf');
+  }
+
+  @font-face {
+    font-family: Gogh_Regular;
+    src: url('../fonts/Gogh-Regular.ttf');
+  }
