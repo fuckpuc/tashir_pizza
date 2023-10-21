@@ -5,7 +5,7 @@ const pizzeriaCount = document.getElementById("pizzeriaCount");
 
 // Опции для адресов в зависимости от города
 const addressOptions = {
-  1: ["Москва 23-й км Киевское ш. 8 стр. 1", "Москва Вернадского 86А", "Ленинский проспект, влад. 109", "Москва Аминьевское шоссе, дом 6", "Москва Дмитровское шоссе, дом 163а"],
+  1: ["Москва 23-й км Киевское ш. 8 стр. 1", "Москва Вернадского 86А", "Москва Ленинский проспект, влад. 109", "Москва Аминьевское шоссе, дом 6", "Москва Дмитровское шоссе, дом 163а"],
   2: ["Калуга ул Кирова 63", "Калуга Кирова 19", "Калуга ул Кирова 1", "Калуга Московская 338а", "Калуга ул Кирова 63 ночная"],
   3: ["Воронеж Бульвар Победы 23Б", "Воронеж пр Ленинский 174", "Воронеж ул 20 лет Октября 90", "Воронеж ул Героев Сибиряков 65а", "Воронеж Парковая 3", "Воронеж Кольцовская 35", "Воронеж Владимира Невского 44/1" ],
   4: ["Астрахань Вокзальная пл 13"],
@@ -87,36 +87,47 @@ $(document).ready(function () {
 
 
 
-    $(document).ready(function () {
-      $("#applicationForm").on("submit", function (event) {
-        event.preventDefault();
-    
-        // Получаем данные из полей формы
-        const data = {
-          city: $("#citySelect").val(),
-          address: $("#addressSelect").val(),
-          vacancy: $("#select_vacansies").val(),
-          first_name: $("#first_name").val(),
-          last_name: $("#last_name").val(),
-          phone: $("#phone").val()
-        };
-    
-        // Отправляем данные на сервер с помощью AJAX
-        $.ajax({
-          url: "https://submit-form.com/qUu7O7St", // Замените на реальный URL вашего сервера
-          type: "post",
-          data: data,
-          success: function (response) {
-            console.log("Данные успешно отправлены!");
-            // Дополнительные действия после успешной отправки данных
-          },
-          error: function (error) {
-            console.error("Ошибка при отправке данных: ", error);
-            // Дополнительные действия в случае ошибки
-          },
-        });
-      });
+$(document).ready(function () {
+  $("#applicationForm").on("submit", function (event) {
+    event.preventDefault();
+    // Получаем данные из полей формы
+    const data = {
+      city: $("#citySelect").val(),
+      address: $("#addressSelect").val(),
+      vacancy: $("#select_vacansies").val(),
+      first_name: $("#first_name").val(),
+      last_name: $("#last_name").val(),
+      phone: $("#phone").val()
+    };
+
+    // Отправляем данные на сервер с помощью AJAX
+    $.ajax({
+      url: "https://submit-form.com/qUu7O7St", // Замените на реальный URL вашего сервера
+      type: "post",
+      data: data,
+      success: function (response) {
+        console.log("Данные успешно отправлены!");
+        // Дополнительные действия после успешной отправки данных
+        // Показать popup
+        $("#successPopup").show();
+
+        // Закрыть popup плавно через 10 секунд
+        setTimeout(function() {
+          $("#successPopup").css("opacity", "0"); // Устанавливаем opacity в 0
+        }, 5000);
+        $("#citySelect").val("select_city");
+        $("#addressSelect").val("search-form__vacancies-title");
+        $("#select_vacansies").val("vacancie");
+        $("#first_name").val("");
+        $("#last_name").val("");
+        $("#phone").val("");
+      },
+      error: function (error) {
+        console.error("Ошибка при отправке данных: ", error);
+      },
     });
+  });
+});
     
 
     // Обработчик события отправки формы
