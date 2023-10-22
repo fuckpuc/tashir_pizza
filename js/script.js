@@ -76,7 +76,7 @@ citySelect.addEventListener("change", function () {
 //Функция дкя поля с номером телефона 
 $(document).ready(function () {
   // Применяем маску для поля ввода телефона
-  $("#phone").mask("8 (000) 000-00-00", {
+  $("#phone").mask("+7 (000) 000-00-00", {
     translation: {
       '0': {
         pattern: /[0-9]/
@@ -124,25 +124,21 @@ $(document).ready(function () {
       },
       error: function (error) {
         console.error("Ошибка при отправке данных: ", error);
+
+        //Ниже код тут не нужен, это для демонстрации. Нужно настроить сервер настроить и убрать код ниже.
+        $("#successPopup").show();
+
+
+        setTimeout(function() {
+          $("#successPopup").css("opacity", "0"); // Устанавливаем opacity в 0
+        }, 5000);
+        $("#citySelect").val("select_city");
+        $("#addressSelect").val("search-form__vacancies-title");
+        $("#select_vacansies").val("vacancie");
+        $("#first_name").val("");
+        $("#last_name").val("");
+        $("#phone").val("");
       },
     });
   });
 });
-    
-
-    // Обработчик события отправки формы
-    // document.getElementById("applicationForm").addEventListener("submit", function (event) {
-    //     event.preventDefault(); // Предотвращаем стандартное поведение формы
-    //     var formData = new FormData(this); // Создаем объект FormData из формы
-  
-    //     // Отправляем данные на сервер с помощью AJAX
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "https://submit-form.com/qUu7O7St", true); // Замените "your_server_url_here" на реальный URL сервера
-    //     xhr.onreadystatechange = function () {
-    //       if (xhr.readyState === 4 && xhr.status === 200) {
-    //         // Действия после успешной отправки данных
-    //         alert("Данные успешно отправлены на сервер");
-    //       }
-    //     };
-    //     xhr.send(formData); // Отправляем данные формы на сервер
-    //   });

@@ -141,6 +141,10 @@ width: 100%;
   width: 65%;
 }
 
+.label__phone {
+  color: #757575;
+}
+
 /* Стили для popup */
 .popup {
   display: none;

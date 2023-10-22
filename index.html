@@ -26,7 +26,7 @@
             Если вы готовы работать с удовольствием,
             то присоединяйтесь!</p>
         <form id="applicationForm">   
-          <select id="citySelect" class="form_select form_input-select search-form__city" required>
+          <select name="Город" id="citySelect" class="form_select form_input-select search-form__city" required>
             <option disabled selected value="select_city">Выберите город</option>
             <option value="1">Москва</option>
             <option value="2">Калуга</option>
@@ -77,16 +77,16 @@
           <div class="search-form__adress">
             <span class="find_picceria" id = "pizzeriaCount"></span>
           </div>
-          <select class="form_select form_input-select search-form__vacancies" id="addressSelect" required>
+          <select name="Адрес" class="form_select form_input-select search-form__vacancies" id="addressSelect" required>
             <option disabled selected value="search-form__vacancies-title">Адрес пиццерии</option>
           </select>
-          <select class="form_select form_input-select select_vacansies" id="select_vacansies" required>
+          <select name="Вакансия" class="form_select form_input-select select_vacansies" id="select_vacansies" required>
             <option disabled selected value="vacancie">Выберите вакансию</option>
             <option value="piccamaker">Пиццмейкер</option>
             <option value="courrier">Курьер</option>
             <option value="cassir">Кассир</option>
         </select>
-          <input class="form_input-select first_name" id="first_name" type="text" placeholder="Ваше имя" required>
+          <input name="Имя" class="form_input-select first_name" id="first_name" type="text" placeholder="Ваше имя" required>
           <input  class="form_input-select search_btn" type="submit" value="Отправить">
         </form>
         </section>
@@ -103,7 +103,8 @@
             type="text"
             placeholder="Фамилия" required
           />
-          <input name="phone" id="phone" type="text" placeholder="Телефон" required/>
+          <label class="label__phone" for="phone">Телефон
+          <input name="phone" id="phone" type="text" placeholder="+7 (900) 000-00-00" required/></label>
           <p class="phone_information">
             По желанию, на случай если мы до вас не дозвонились по телефону
           </p>
