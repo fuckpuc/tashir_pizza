@@ -92,12 +92,12 @@ $(document).ready(function () {
     event.preventDefault();
     // Получаем данные из полей формы
     const data = {
-      city: $("#citySelect").val(),
-      address: $("#addressSelect").val(),
-      vacancy: $("#select_vacansies").val(),
-      first_name: $("#first_name").val(),
-      last_name: $("#last_name").val(),
-      phone: $("#phone").val()
+      'Город': $("#citySelect").val(),
+      'Адресс': $("#addressSelect").val(),
+      'Вакансия': $("#select_vacansies").val(),
+      'Имя': $("#first_name").val(),
+      'Фамилия': $("#last_name").val(),
+      'Телефон': $("#phone").val()
     };
 
     // Отправляем данные на сервер с помощью AJAX
@@ -125,7 +125,7 @@ $(document).ready(function () {
       error: function (error) {
         console.error("Ошибка при отправке данных: ", error);
 
-        //Ниже код тут не нужен, это для демонстрации. Нужно настроить сервер настроить и убрать код ниже.
+        //Ниже код тут не нужен, это для демонстрации. Нужно настроить сервер и убрать код ниже.
         $("#successPopup").show();
 
 
